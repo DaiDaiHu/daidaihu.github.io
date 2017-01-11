@@ -238,7 +238,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/09/My-New-Post/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Java-WeightedQuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -263,8 +263,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/09/My-New-Post/" itemprop="url">
-                  My New Post
+                <a class="post-title-link" href="/2016/12/23/Java-WeightedQuickUnion/" itemprop="url">
+                  [Java]WeightedQuickUnion
                 </a>
               
             
@@ -280,8 +280,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-09T09:29:22-06:00">
-                2017-01-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T23:15:29-06:00">
+                2016-12-23
               </time>
             
 
@@ -318,8 +318,7 @@
       
         
           
-            <p>Welcome to here!<br>This is a test.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017年12月22日</div><div class="line"> * </div><div class="line"> * The idea of quick find is </div><div class="line"> * if id[p] = id[q] </div><div class="line"> * p and q are in an union</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickFind</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">QuickFind</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">            id[i] = i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id[p] == id[q];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; id.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(id[i] == id[p]) </div><div class="line">                id[i] = id[q];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        QuickFind qf = <span class="keyword">new</span> QuickFind(<span class="number">10</span>);</div><div class="line">        System.out.println(qf.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">        qf.union(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line">        System.out.println(qf.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
+            <h1 id="WeightedQuickUnion"><a href="#WeightedQuickUnion" class="headerlink" title="WeightedQuickUnion"></a>WeightedQuickUnion</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月23日</div><div class="line"> * </div><div class="line"> * Flatter the tree:</div><div class="line"> * Before union, compare these two trees</div><div class="line"> * Then union root of the smaller one to root of the larger one</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeightedQU</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id, size;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WeightedQU</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        size = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            id[i] = i;</div><div class="line">            size[i] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (id[i] != i) &#123;</div><div class="line">            i = id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> pid = root(p);</div><div class="line">        <span class="keyword">int</span> qid = root(q);</div><div class="line">        <span class="keyword">if</span> (qid == pid) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span> (size[qid] &lt; size[pid]) &#123;</div><div class="line">            id[qid] = pid; </div><div class="line">            size[pid] += size[qid];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            id[pid] = qid;</div><div class="line">            size[qid] += size[pid];</div><div class="line">        &#125;</div><div class="line"><span class="comment">//        System.out.println("****");</span></div><div class="line"><span class="comment">//        System.out.println(id[3]);</span></div><div class="line"><span class="comment">//        System.out.println(id[4]);</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        WeightedQU wqu = <span class="keyword">new</span> WeightedQU(<span class="number">10</span>);</div><div class="line">        wqu.union(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        wqu.union(<span class="number">2</span>, <span class="number">0</span>);</div><div class="line">        wqu.union(<span class="number">1</span>, <span class="number">3</span>);</div><div class="line">        wqu.union(<span class="number">4</span>, <span class="number">1</span>);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -357,7 +356,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/08/hello-world/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Java-CompressedQuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -382,8 +381,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/08/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/12/23/Java-CompressedQuickUnion/" itemprop="url">
+                  [Java]CompressedQuickUnion
                 </a>
               
             
@@ -399,8 +398,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-08T08:47:34-06:00">
-                2017-01-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T23:14:47-06:00">
+                2016-12-23
               </time>
             
 
@@ -437,16 +436,243 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h1 id="CompressedQuickUnion"><a href="#CompressedQuickUnion" class="headerlink" title="CompressedQuickUnion"></a>CompressedQuickUnion</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月23日</div><div class="line"> * </div><div class="line"> * Flatter the tree:</div><div class="line"> * Each time call the root method, makes i to connect to its root</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CompressedQU</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id, size;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CompressedQU</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        size = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            id[i] = i;</div><div class="line">            size[i] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (id[i] != i) &#123;</div><div class="line">            id[i] = id[id[i]];  <span class="comment">//connect i to upper node to flat</span></div><div class="line">            i = id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> pid = root(p);</div><div class="line">        <span class="keyword">int</span> qid = root(q);</div><div class="line">        id[pid] = qid;</div><div class="line"><span class="comment">//        System.out.println(id[3]);</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        CompressedQU cqu = <span class="keyword">new</span> CompressedQU(<span class="number">10</span>);</div><div class="line">        cqu.union(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        cqu.union(<span class="number">3</span>, <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
 
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Java-QuickUnion/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dai Hu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/Java-QuickUnion/" itemprop="url">
+                  [Java]QuickUnion
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T23:13:34-06:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="QuickUnion"><a href="#QuickUnion" class="headerlink" title="QuickUnion"></a>QuickUnion</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月22日</div><div class="line"> * </div><div class="line"> * The idea of quick union is: </div><div class="line"> * if id[p] = q; id[q] = j; id[j] = j</div><div class="line"> * p q j are in an union, and j is their root</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickUnion</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">QuickUnion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            id[i] = i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (id[i] != i) &#123;</div><div class="line">            i = id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> proot = root(p);</div><div class="line">        id[proot] = q;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        QuickUnion qu = <span class="keyword">new</span> QuickUnion(<span class="number">10</span>);</div><div class="line">        System.out.println(qu.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">        qu.union(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line">        System.out.println(qu.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Java-QuickFind/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dai Hu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/22/Java-QuickFind/" itemprop="url">
+                  [Java]QuickFind
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T23:10:26-06:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="QuickFind"><a href="#QuickFind" class="headerlink" title="QuickFind"></a>QuickFind</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月22日</div><div class="line"> * </div><div class="line"> * The idea of quick find is </div><div class="line"> * iff id[p] = id[q] </div><div class="line"> * p and q are in an union</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickFind</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">QuickFind</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</div><div class="line">            id[i] = i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> id[p] == id[q];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; id.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(id[i] == id[p]) </div><div class="line">                id[i] = id[q];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        QuickFind qf = <span class="keyword">new</span> QuickFind(<span class="number">10</span>);</div><div class="line">        System.out.println(qf.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">        qf.union(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line">        System.out.println(qf.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
           
         
       
@@ -518,7 +744,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
