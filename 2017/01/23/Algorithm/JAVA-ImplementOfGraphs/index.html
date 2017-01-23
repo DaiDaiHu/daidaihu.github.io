@@ -1,0 +1,775 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Algorithms II-Princeton-CourseraIt’s an implement of Directed Graph Algorithms.This program is to use provided Algorithm to construct a semantic lexicon and find the most recent ancestor and its lengt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[JAVA]ImplementOfGraphs">
+<meta property="og:url" content="http://yoursite.com/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Algorithms II-Princeton-CourseraIt’s an implement of Directed Graph Algorithms.This program is to use provided Algorithm to construct a semantic lexicon and find the most recent ancestor and its lengt">
+<meta property="og:updated_time" content="2017-01-23T20:33:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[JAVA]ImplementOfGraphs">
+<meta name="twitter:description" content="Algorithms II-Princeton-CourseraIt’s an implement of Directed Graph Algorithms.This program is to use provided Algorithm to construct a semantic lexicon and find the most recent ancestor and its lengt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/"/>
+
+
+
+
+
+  <title> [JAVA]ImplementOfGraphs | Hexo </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dai Hu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [JAVA]ImplementOfGraphs
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-23T14:15:05-06:00">
+                2017-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/23/Algorithm/JAVA-ImplementOfGraphs/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/" class="leancloud_visitors" data-flag-title="[JAVA]ImplementOfGraphs">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Algorithms-II-Princeton-Coursera"><a href="#Algorithms-II-Princeton-Coursera" class="headerlink" title="Algorithms II-Princeton-Coursera"></a>Algorithms II-Princeton-Coursera</h3><p>It’s an implement of Directed Graph Algorithms.<br>This program is to use provided Algorithm to construct a semantic lexicon and find the most recent ancestor and its length.</p>
+<p>New for me:</p>
+<ol>
+<li>Use HashMap to create a symbol table, String to Bag of Integer</li>
+<li>Confensive copy to protect data</li>
+</ol>
+<h1 id="SAP"><a href="#SAP" class="headerlink" title="SAP"></a>SAP</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Arrays;</div><div class="line"></div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.BreadthFirstDirectedPaths;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.Digraph;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017-1-23</div><div class="line"> * This program is to use the provided directed graph algorithm</div><div class="line"> * to find the shortest ancestor and length for 2 vertices.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SAP</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Digraph G;</div><div class="line">    </div><div class="line">   <span class="comment">// constructor takes a directed graph</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SAP</span><span class="params">(Digraph G)</span> </span>&#123;</div><div class="line">       <span class="keyword">this</span>.G = <span class="keyword">new</span> Digraph(G);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// transfer Integer to list to improve reusability</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">        checkInt(v);</div><div class="line">        checkInt(w);</div><div class="line">        <span class="keyword">return</span> computer(Arrays.asList(v), Arrays.asList(w))[<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// transfer Integer to list to improve reusability</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ancestor</span><span class="params">(<span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</div><div class="line">        checkInt(v);</div><div class="line">        checkInt(w);</div><div class="line">        <span class="keyword">return</span> computer(Arrays.asList(v), Arrays.asList(w))[<span class="number">0</span>];</div><div class="line">       </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Purpose: look through all vertices to calculate the smallest ancestor</span></div><div class="line">    <span class="comment">// Return: an array of the smallest ancestor and length </span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] computer(Iterable&lt;Integer&gt; v, Iterable&lt;Integer&gt; w) &#123;</div><div class="line">        <span class="keyword">int</span>[] answer = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</div><div class="line">        <span class="keyword">int</span> miniAt = -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> miniLength = Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">int</span> length;</div><div class="line">        BreadthFirstDirectedPaths bfdv = <span class="keyword">new</span> BreadthFirstDirectedPaths(G, v);</div><div class="line">        BreadthFirstDirectedPaths bfdw = <span class="keyword">new</span> BreadthFirstDirectedPaths(G, w);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> vertice = <span class="number">0</span>; vertice &lt; G.V(); vertice++) &#123;</div><div class="line">            <span class="keyword">if</span> (bfdv.hasPathTo(vertice) &amp;&amp; bfdw.hasPathTo(vertice)) &#123;</div><div class="line">                length = bfdv.distTo(vertice) + bfdw.distTo(vertice);</div><div class="line">                <span class="keyword">if</span> (length &lt; miniLength) &#123;</div><div class="line">                    miniAt = vertice;</div><div class="line">                    miniLength = length;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        answer[<span class="number">0</span>] = miniAt;</div><div class="line">        <span class="keyword">if</span> (miniAt == -<span class="number">1</span>) answer[<span class="number">1</span>] = -<span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span> answer[<span class="number">1</span>] = miniLength;</div><div class="line">        <span class="keyword">return</span> answer;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Purpose: calculate the length of shortest ancestral path </span></div><div class="line">    <span class="comment">// between any vertex in v and any vertex in w</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">(Iterable&lt;Integer&gt; v, Iterable&lt;Integer&gt; w)</span> </span>&#123;</div><div class="line">        checkIter(v);</div><div class="line">        checkIter(w);</div><div class="line">        <span class="keyword">return</span> computer(v, w)[<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Purpose: calculate a common ancestor that participates in shortest ancestral path</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">ancestor</span><span class="params">(Iterable&lt;Integer&gt; v, Iterable&lt;Integer&gt; w)</span> </span>&#123;</div><div class="line">        checkIter(v);</div><div class="line">        checkIter(w);</div><div class="line">        <span class="keyword">return</span> computer(v, w)[<span class="number">0</span>];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">checkInt</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt; G.V()-<span class="number">1</span>) <span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">checkIter</span><span class="params">(Iterable&lt;Integer&gt; i)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (i == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> in: i) &#123;</div><div class="line">            checkInt(in);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="WordNet"><a href="#WordNet" class="headerlink" title="WordNet"></a>WordNet</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.HashMap;</div><div class="line"></div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.Bag;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.Digraph;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.DirectedCycle;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.DirectedDFS;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.In;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017-1-23</div><div class="line"> * This program is to read synsets and construct 2 symbol tables</div><div class="line"> * Then read hypernyms to construct a directed graph</div><div class="line"> * Finally, use the graph to create a SAP to find the shortest ancestor</div><div class="line"> * and length between 2 nouns. </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordNet</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> HashMap&lt;Integer, String&gt; id2noun;</div><div class="line">    <span class="keyword">private</span> HashMap&lt;String, Bag&lt;Integer&gt;&gt; noun2id;</div><div class="line">    <span class="keyword">private</span> SAP s;</div><div class="line">    </div><div class="line">   <span class="comment">// read two input files and use HashMap to store symbol table: noun2id(bag) and id2noun</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="title">WordNet</span><span class="params">(String synsets, String hypernyms)</span> </span>&#123;</div><div class="line">       checkString(synsets);</div><div class="line">       checkString(hypernyms);</div><div class="line">       </div><div class="line">       id2noun = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</div><div class="line">       noun2id = <span class="keyword">new</span> HashMap&lt;String, Bag&lt;Integer&gt;&gt;();</div><div class="line">       readSynsets(synsets);</div><div class="line">       Digraph digraph = readHypernyms(hypernyms);</div><div class="line">       <span class="comment">// defensive copy</span></div><div class="line">       s = <span class="keyword">new</span> SAP(digraph);</div><div class="line">       </div><div class="line">       <span class="comment">// check if has root (not a cycle)</span></div><div class="line">       DirectedCycle finder = <span class="keyword">new</span> DirectedCycle(digraph);</div><div class="line">       <span class="keyword">if</span> (finder.hasCycle()) </div><div class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">       </div><div class="line">       <span class="comment">// check if has only one root </span></div><div class="line">       <span class="keyword">int</span> rootNumber = <span class="number">0</span>;</div><div class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digraph.V(); i++) &#123;</div><div class="line">           DirectedDFS dfs = <span class="keyword">new</span> DirectedDFS(digraph, i);</div><div class="line">           <span class="keyword">if</span> (dfs.count() == <span class="number">1</span>) &#123;</div><div class="line">               rootNumber++;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">if</span> (rootNumber &gt; <span class="number">1</span>)</div><div class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">       </div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   <span class="comment">// read synsets and put datas into two symbol table</span></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readSynsets</span><span class="params">(String synsets)</span> </span>&#123;</div><div class="line">       Bag&lt;Integer&gt; idBag; </div><div class="line">       In in = <span class="keyword">new</span> In(synsets);</div><div class="line">       </div><div class="line">       <span class="keyword">while</span> (in.hasNextLine()) &#123;</div><div class="line">           String[] fields = in.readLine().split(<span class="string">","</span>);</div><div class="line">           <span class="keyword">int</span> id = Integer.parseInt(fields[<span class="number">0</span>]);</div><div class="line">           String nouns = fields[<span class="number">1</span>];</div><div class="line">           id2noun.put(id, nouns);</div><div class="line">           </div><div class="line">           <span class="keyword">for</span> (String noun: nouns.split(<span class="string">" "</span>)) &#123;</div><div class="line">               <span class="keyword">if</span> (noun2id.containsKey(noun))</div><div class="line">                   noun2id.get(noun).add(id);</div><div class="line">               <span class="keyword">else</span> &#123;</div><div class="line">                   idBag = <span class="keyword">new</span> Bag&lt;Integer&gt;();</div><div class="line">                   idBag.add(id);</div><div class="line">                   noun2id.put(noun, idBag);</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   <span class="comment">// Purpose: read hypernyms and construct the digraph for searching ancestor</span></div><div class="line">   <span class="comment">// Pre: an input file name for hypernyms</span></div><div class="line">   <span class="comment">// Return: a digraph of hypernyms relationship</span></div><div class="line">   <span class="function"><span class="keyword">private</span> Digraph <span class="title">readHypernyms</span><span class="params">(String hypernyms)</span> </span>&#123;</div><div class="line">       Digraph digraph = <span class="keyword">new</span> Digraph(id2noun.size());</div><div class="line">       In in = <span class="keyword">new</span> In(hypernyms);</div><div class="line">       <span class="keyword">while</span> (in.hasNextLine()) &#123;</div><div class="line">           String[] fields = in.readLine().split(<span class="string">","</span>);</div><div class="line">           <span class="keyword">int</span> id = Integer.parseInt(fields[<span class="number">0</span>]);</div><div class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; fields.length; i++) &#123;</div><div class="line">               digraph.addEdge(id, Integer.parseInt(fields[i]));</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">return</span> digraph;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Purpose: returns all WordNet nouns</span></div><div class="line">   <span class="function"><span class="keyword">public</span> Iterable&lt;String&gt; <span class="title">nouns</span><span class="params">()</span> </span>&#123;</div><div class="line">       <span class="keyword">return</span> noun2id.keySet();</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// Purpose: check if the word a WordNet noun</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isNoun</span><span class="params">(String word)</span> </span>&#123;</div><div class="line">       checkString(word);</div><div class="line">       <span class="keyword">return</span> noun2id.containsKey(word);</div><div class="line">   &#125;</div><div class="line">   </div><div class="line"></div><div class="line">   <span class="comment">// shortest distance between nounA and nounB</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">distance</span><span class="params">(String nounA, String nounB)</span> </span>&#123;</div><div class="line">       checkString(nounA);</div><div class="line">       checkString(nounB);</div><div class="line">       checkNoun(nounA, nounB);</div><div class="line">       Bag&lt;Integer&gt; aid = noun2id.get(nounA);</div><div class="line">       Bag&lt;Integer&gt; bid = noun2id.get(nounB);</div><div class="line">       <span class="keyword">return</span> s.length(aid, bid);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="comment">// shortest common ancestor of nounA and nounB</span></div><div class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">sap</span><span class="params">(String nounA, String nounB)</span> </span>&#123;</div><div class="line">       checkString(nounA);</div><div class="line">       checkString(nounB);</div><div class="line">       checkNoun(nounA, nounB);</div><div class="line">       Bag&lt;Integer&gt; aid = noun2id.get(nounA);</div><div class="line">       Bag&lt;Integer&gt; bid = noun2id.get(nounB);</div><div class="line">       <span class="keyword">int</span> idOfAn = s.ancestor(aid, bid);</div><div class="line">       <span class="keyword">return</span> id2noun.get(idOfAn);</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   <span class="comment">// check if argument is null</span></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">checkString</span><span class="params">(String noun)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (noun == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</div><div class="line">   &#125;</div><div class="line">   </div><div class="line">   <span class="comment">// check if is a noun in symbol table</span></div><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">checkNoun</span><span class="params">(String nounA, String nounB)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (!noun2id.containsKey(nounA) || !noun2id.containsKey(nounB))</div><div class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="Outcast"><a href="#Outcast" class="headerlink" title="Outcast"></a>Outcast</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017-1-23</div><div class="line"> * Outcast is to look up a list of words to see which </div><div class="line"> * one has the largest sum of distance to others </div><div class="line"> * </div><div class="line"> * This program implement WordNet to find the outcast</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outcast</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WordNet wordnet;</div><div class="line">    </div><div class="line">    <span class="comment">// constructor takes a WordNet object</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Outcast</span><span class="params">(WordNet wordnet)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.wordnet = wordnet;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">// Purpose: calculate the outcast, which has the largest sum</span></div><div class="line">    <span class="comment">// Pre: an array of WordNet nouns</span></div><div class="line">    <span class="comment">// Return: outcast</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">outcast</span><span class="params">(String[] nouns)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> sum;</div><div class="line">        <span class="keyword">int</span> largest = <span class="number">0</span>;</div><div class="line">        String maxNoun = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nouns.length; i++) &#123;</div><div class="line">            sum = <span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nouns.length; j++) &#123;</div><div class="line">                sum += wordnet.distance(nouns[i], nouns[j]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (sum &gt; largest) &#123;</div><div class="line">                maxNoun = nouns[i];</div><div class="line">                largest = sum;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> maxNoun;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/14/WEB/WEB-PartI-HTML-CSS-JS/" rel="next" title="[WEB]PartI-HTML&CSS&JS">
+                <i class="fa fa-chevron-left"></i> [WEB]PartI-HTML&CSS&JS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/23/Algorithm/JAVA-ImplementOfGraphs/"
+           data-title="[JAVA]ImplementOfGraphs" data-url="http://yoursite.com/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Dai Hu" />
+          <p class="site-author-name" itemprop="name">Dai Hu</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithms-II-Princeton-Coursera"><span class="nav-number">1.</span> <span class="nav-text">Algorithms II-Princeton-Coursera</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAP"><span class="nav-number"></span> <span class="nav-text">SAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WordNet"><span class="nav-number"></span> <span class="nav-text">WordNet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Outcast"><span class="nav-number"></span> <span class="nav-text">Outcast</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dai Hu</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"daidaihu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("mipz0qv83CKwtDUwmkTLR1T0-gzGzoHsz", "F1eSlpQvIEICnqCXTxCYRppJ");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
