@@ -238,6 +238,174 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/Algorithm/JAVA-ImplementOfEdgeWeightedDAG/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dai Hu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/02/Algorithm/JAVA-ImplementOfEdgeWeightedDAG/" itemprop="url">
+                  [JAVA]ImplementOfEdgeWeightedDAG
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-02T13:57:00-06:00">
+                2017-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Application-of-Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Application of Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/02/Algorithm/JAVA-ImplementOfEdgeWeightedDAG/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/02/Algorithm/JAVA-ImplementOfEdgeWeightedDAG/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/02/Algorithm/JAVA-ImplementOfEdgeWeightedDAG/" class="leancloud_visitors" data-flag-title="[JAVA]ImplementOfEdgeWeightedDAG">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This is the second assignment of Algorithms II-Princeton-Coursera<br>This program is to use the idea of edge-weighted DAG to calculate and remove the path of a picture from up to down or left to right that has the smallest energy.<br>This is used in image resize and ensure keeping the best details.</p>
+<p>New for me:</p>
+<ol>
+<li>Reducing the unneccessary private function can reduce the using of memory(global variable), although the code will look more complicated.</li>
+<li>System.arraycopy can copy and cover it to itself, very interesting.</li>
+<li>Defensive copy can also be used in some return function to make sure client cannot mutate it.</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.awt.Color;</div><div class="line"></div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.Picture;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017-2-2</div><div class="line"> * This program is to use the idea of edge-weighted DAG to calculate and remove</div><div class="line"> * the path from up to down or left to right that has the smallest energy</div><div class="line"> * </div><div class="line"> * This is used in image resize to ensure keep the best detail of the image</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SeamCarver</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Picture picture;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SeamCarver</span><span class="params">(Picture picture)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (picture == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException();</div><div class="line">        <span class="keyword">this</span>.picture = <span class="keyword">new</span> Picture(picture);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@return</span> current picture</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Picture <span class="title">picture</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Picture(picture);</div><div class="line">    &#125; </div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@return</span> width of current picture</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">width</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> picture.width();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@return</span> height of current picture</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">height</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> picture.height();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * calculate the energy of pixel at column x and row y</div><div class="line">     * <span class="doctag">@param</span> x: width coordinator</div><div class="line">     * <span class="doctag">@param</span> y: height coordinator</div><div class="line">     * <span class="doctag">@return</span> the energy of this coordinator</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">energy</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span> || x &gt; width()-<span class="number">1</span> || y &lt; <span class="number">0</span> || y &gt; height()-<span class="number">1</span>)</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException();</div><div class="line">        <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span> || x == width()-<span class="number">1</span> || y == height()-<span class="number">1</span>)</div><div class="line">            <span class="keyword">return</span> <span class="number">1000</span>;</div><div class="line">        <span class="keyword">double</span> value = Math.sqrt(xenergy(x, y) + yenergy(x, y));</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@param</span> x: width coordinator</div><div class="line">     * <span class="doctag">@param</span> y: height coordinator</div><div class="line">     * <span class="doctag">@return</span> x direction energy</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">xenergy</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">        Color leftColor = picture.get(x-<span class="number">1</span>, y);</div><div class="line">        Color rightColor = picture.get(x+<span class="number">1</span>, y);</div><div class="line">        <span class="keyword">double</span> rd = rightColor.getRed() - leftColor.getRed();</div><div class="line">        <span class="keyword">double</span> gd = rightColor.getGreen() - leftColor.getGreen();</div><div class="line">        <span class="keyword">double</span> bd = rightColor.getBlue() - leftColor.getBlue();</div><div class="line">        <span class="keyword">double</span> value = rd*rd + gd*gd + bd*bd;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@param</span> x: width coordinator</div><div class="line">     * <span class="doctag">@param</span> y: height coordinator</div><div class="line">     * <span class="doctag">@return</span> y direction energy</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">double</span> <span class="title">yenergy</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">        Color upColor = picture.get(x, y-<span class="number">1</span>);</div><div class="line">        Color downColor = picture.get(x, y+<span class="number">1</span>);</div><div class="line">        <span class="keyword">double</span> rd = downColor.getRed() - upColor.getRed();</div><div class="line">        <span class="keyword">double</span> gd = downColor.getGreen() - upColor.getGreen();</div><div class="line">        <span class="keyword">double</span> bd = downColor.getBlue() - upColor.getBlue();</div><div class="line">        <span class="keyword">double</span> value = rd*rd + gd*gd + bd*bd;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * use findVerticalSeam() to find the horizontal seam</div><div class="line">     * <span class="doctag">@return</span> a 1D array recording the smallest horizontal energy path</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] findHorizontalSeam() &#123;</div><div class="line">        Picture origion = <span class="keyword">this</span>.picture;</div><div class="line">        transpose();</div><div class="line">        <span class="keyword">int</span>[] verticalSeam = findVerticalSeam();</div><div class="line">        <span class="keyword">this</span>.picture = origion;</div><div class="line">        <span class="keyword">return</span> verticalSeam;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * transpose the picture</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">transpose</span><span class="params">()</span> </span>&#123;</div><div class="line">        Picture newPicture = <span class="keyword">new</span> Picture(height(), width());</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width(); i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; height(); j++) &#123;</div><div class="line">                newPicture.set(j, i, picture.get(i, j));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.picture = newPicture;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * sequence of indices for vertical seam</div><div class="line">     * <span class="doctag">@return</span> a 1D array recording the smallest vertical energy path</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] findVerticalSeam() &#123;</div><div class="line">        <span class="keyword">int</span> height = height();</div><div class="line">        <span class="keyword">int</span> width = width();</div><div class="line">        <span class="keyword">int</span>[][] pathTo = <span class="keyword">new</span> <span class="keyword">int</span>[height][width];</div><div class="line">        <span class="keyword">double</span>[][] distTo = <span class="keyword">new</span> <span class="keyword">double</span>[height][width];</div><div class="line">        <span class="keyword">int</span>[] path = <span class="keyword">new</span> <span class="keyword">int</span>[height];</div><div class="line">        </div><div class="line">        <span class="comment">// set all distTo to max value</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; height; row++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; width; col++) &#123;</div><div class="line">                <span class="keyword">if</span> (row == <span class="number">0</span>)</div><div class="line">                    distTo[row][col] = <span class="number">1000</span>;</div><div class="line">                <span class="keyword">else</span></div><div class="line">                    distTo[row][col] = Double.POSITIVE_INFINITY;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// relax all the coordinators</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> row = <span class="number">0</span>; row &lt; height-<span class="number">1</span>; row++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; width; col++) &#123;</div><div class="line">                <span class="comment">// relax (row, col) with (row+1, col)</span></div><div class="line">                <span class="keyword">if</span> (distTo[row+<span class="number">1</span>][col] &gt; distTo[row][col] + energy(col, row+<span class="number">1</span>)) &#123;</div><div class="line">                    distTo[row+<span class="number">1</span>][col] = distTo[row][col] + energy(col, row+<span class="number">1</span>);</div><div class="line">                    pathTo[row+<span class="number">1</span>][col] = col;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// relax (row, col) with (row+1, col-1)</span></div><div class="line">                <span class="keyword">if</span> (col &gt; <span class="number">0</span>) &#123; </div><div class="line">                    <span class="keyword">if</span> (distTo[row+<span class="number">1</span>][col-<span class="number">1</span>] &gt; distTo[row][col] + energy(col-<span class="number">1</span>, row+<span class="number">1</span>)) &#123;</div><div class="line">                        distTo[row+<span class="number">1</span>][col-<span class="number">1</span>] = distTo[row][col] + energy(col-<span class="number">1</span>, row+<span class="number">1</span>);</div><div class="line">                        pathTo[row+<span class="number">1</span>][col-<span class="number">1</span>] = col;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">// relax (row, col) with (row+1, col+1)</span></div><div class="line">                <span class="keyword">if</span> (col &lt; width-<span class="number">1</span>) &#123;</div><div class="line">                    <span class="keyword">if</span> (distTo[row+<span class="number">1</span>][col+<span class="number">1</span>] &gt; distTo[row][col] + energy(col+<span class="number">1</span>, row+<span class="number">1</span>)) &#123;</div><div class="line">                        distTo[row+<span class="number">1</span>][col+<span class="number">1</span>] = distTo[row][col] + energy(col+<span class="number">1</span>, row+<span class="number">1</span>);</div><div class="line">                        pathTo[row+<span class="number">1</span>][col+<span class="number">1</span>] = col;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// iterate all widths to find the minimum energy path</span></div><div class="line">        <span class="keyword">int</span> miniw = -<span class="number">1</span>;</div><div class="line">        <span class="keyword">double</span> miniEnergy = Double.POSITIVE_INFINITY;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> col = <span class="number">0</span>; col &lt; width; col++) &#123;</div><div class="line">            <span class="keyword">if</span> (distTo[height-<span class="number">1</span>][col] &lt; miniEnergy) &#123;</div><div class="line">                miniw = col;</div><div class="line">                miniEnergy = distTo[height-<span class="number">1</span>][col];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// trace back to record their path</span></div><div class="line">        path[height-<span class="number">1</span>] = miniw;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = height-<span class="number">2</span>; i &gt; -<span class="number">1</span>; i--) &#123;</div><div class="line">            path[i] = pathTo[i+<span class="number">1</span>][path[i+<span class="number">1</span>]];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> path;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * remove horizontal seam from current picture</div><div class="line">     * <span class="doctag">@param</span> seam: an 1-D array recording the row coordinator of seam</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeHorizontalSeam</span><span class="params">(<span class="keyword">int</span>[] seam)</span> </span>&#123;</div><div class="line">        <span class="comment">// transpose the image</span></div><div class="line">        transpose();</div><div class="line">        <span class="comment">// remove the vertical seam</span></div><div class="line">        removeVerticalSeam(seam);</div><div class="line">        <span class="comment">// transpose back</span></div><div class="line">        transpose();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * remove vertical seam from current picture</div><div class="line">     * <span class="doctag">@param</span> seam: an 1-D array recording the column coordinator of seam</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeVerticalSeam</span><span class="params">(<span class="keyword">int</span>[] seam)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> width = width();</div><div class="line">        <span class="keyword">int</span> height = height();</div><div class="line">        <span class="comment">// check valid input</span></div><div class="line">        <span class="keyword">if</span> (seam.length != height) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; seam.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (seam[i] &lt; <span class="number">0</span> || seam[i] &gt;= width) <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; Math.abs(seam[i] - seam[i-<span class="number">1</span>]) &gt; <span class="number">1</span>)</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// store all colors in an 2D-array</span></div><div class="line">        Color[][] colorArray = <span class="keyword">new</span> Color[height][width];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; height; j++) &#123;</div><div class="line">                colorArray[j][i] = picture.get(i, j);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// copy to itself to cover the seam coordinators</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; seam.length; i++) &#123;</div><div class="line">            System.arraycopy(colorArray[i], seam[i]+<span class="number">1</span>, colorArray[i], seam[i], width-seam[i]-<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// use the 2D-array to create a new picture</span></div><div class="line">        Picture newPicture = <span class="keyword">new</span> Picture(width-<span class="number">1</span>, height);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; width-<span class="number">1</span>; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; height; j++) &#123;</div><div class="line">                newPicture.set(i, j, colorArray[j][i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.picture = newPicture;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/23/Algorithm/JAVA-ImplementOfGraphs/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1116,12 +1284,19 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
 
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
           
 
           
