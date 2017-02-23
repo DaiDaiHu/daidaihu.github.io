@@ -248,7 +248,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/Algorithm/Java-MaxFlow-MinCut/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/22/Algorithm/Application/Java-R-way-Trie-DFS-Boggle-game/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -273,7 +273,173 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/20/Algorithm/Java-MaxFlow-MinCut/" itemprop="url">
+                <a class="post-title-link" href="/2017/02/22/Algorithm/Application/Java-R-way-Trie-DFS-Boggle-game/" itemprop="url">
+                  [Java]R-way Trie&DFS(Boggle game)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T21:55:31-06:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Application-of-Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Application of Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/22/Algorithm/Application/Java-R-way-Trie-DFS-Boggle-game/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/22/Algorithm/Application/Java-R-way-Trie-DFS-Boggle-game/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/22/Algorithm/Application/Java-R-way-Trie-DFS-Boggle-game/" class="leancloud_visitors" data-flag-title="[Java]R-way Trie&DFS(Boggle game)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>This is the forth assignment of Algorithms II-Princeton-Coursera</p>
+<p>This program is a word game called Boggle. Players use a 16 cubic dice board to build valid words.<br><img src="/images/BoggleGame.png" class="hi" width="820" height="470" title="Boggle Game"></p>
+<p>This program is to creat a R-way Trie dictionary to store a dicionary and check prefix, and to creat a DFS to look through all words.</p>
+<p>I struggled for a long time in the DFS recursive part. It doesn’t like what I learned, finding the way to a vertice(using one graph). This program need to use different graph, and solution is in line 73.</p>
+<h1 id="BoggleSolver"><a href="#BoggleSolver" class="headerlink" title="BoggleSolver"></a>BoggleSolver</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.In;</div><div class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.StdOut;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * This algorithm is to implement R-way tries set to store a dictionary and to check prefix</div><div class="line"> * Deep First Search to make up strings.</div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017年2月22日</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BoggleSolver</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> row, col;</div><div class="line">    <span class="keyword">private</span> TrieSET dic;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BoggleSolver</span><span class="params">(String[] dictionary)</span> </span>&#123;</div><div class="line">        dic = <span class="keyword">new</span> TrieSET();</div><div class="line">        <span class="keyword">for</span> (String word: dictionary) &#123;</div><div class="line">            dic.add(word);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@param</span> board</div><div class="line">     * <span class="doctag">@return</span> the set of all valid words in the given board</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Iterable&lt;String&gt; <span class="title">getAllValidWords</span><span class="params">(BoggleBoard board)</span> </span>&#123;</div><div class="line">        List&lt;String&gt; container = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">boolean</span>[][] marked;</div><div class="line">        row = board.rows();</div><div class="line">        col = board.cols();</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</div><div class="line">                String str = <span class="string">""</span>;</div><div class="line">                marked = <span class="keyword">new</span> <span class="keyword">boolean</span>[row][col];</div><div class="line">                dfs(i, j, board, str, marked, container);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> container;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * DFS: recursively add char into string to check if in dictionary</div><div class="line">     * true for storing in container</div><div class="line">     * </div><div class="line">     * <span class="doctag">@param</span> i, j: the position of the the begin char</div><div class="line">     * <span class="doctag">@param</span> board</div><div class="line">     * <span class="doctag">@param</span> str: store in container if this string is in dictionary</div><div class="line">     * <span class="doctag">@param</span> marked: mark for checking if visited</div><div class="line">     * <span class="doctag">@param</span> container: the result containing strings in dictionary</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, BoggleBoard board, String str, <span class="keyword">boolean</span>[][] marked, List&lt;String&gt; container)</span> </span>&#123;</div><div class="line">        <span class="keyword">char</span> letter;</div><div class="line">        <span class="keyword">if</span> (i &gt;= <span class="number">0</span> &amp;&amp; i &lt; row &amp;&amp; j &gt;= <span class="number">0</span> &amp;&amp; j &lt; col &amp;&amp; !marked[i][j]) &#123;</div><div class="line">            letter = board.getLetter(i, j);</div><div class="line">            <span class="keyword">if</span> (letter == <span class="string">'Q'</span>) </div><div class="line">                str += <span class="string">"QU"</span>;</div><div class="line">            <span class="keyword">else</span> </div><div class="line">                str += letter;</div><div class="line">            <span class="keyword">if</span> (str.length() &gt; <span class="number">2</span> &amp;&amp; dic.contains(str) &amp;&amp; !container.contains(str))</div><div class="line">                container.add(str);</div><div class="line">            <span class="keyword">if</span> (!dic.isPrefix(str)) <span class="keyword">return</span>;</div><div class="line">            marked[i][j] = <span class="keyword">true</span>;</div><div class="line">            dfs(i+<span class="number">1</span>, j, board, str, marked, container);</div><div class="line">            dfs(i-<span class="number">1</span>, j, board, str, marked, container);</div><div class="line">            dfs(i, j+<span class="number">1</span>, board, str, marked, container);</div><div class="line">            dfs(i, j-<span class="number">1</span>, board, str, marked, container);</div><div class="line">            dfs(i+<span class="number">1</span>, j+<span class="number">1</span>, board, str, marked, container);</div><div class="line">            dfs(i-<span class="number">1</span>, j-<span class="number">1</span>, board, str, marked, container);</div><div class="line">            dfs(i+<span class="number">1</span>, j-<span class="number">1</span>, board, str, marked, container);</div><div class="line">            dfs(i-<span class="number">1</span>, j+<span class="number">1</span>, board, str, marked, container);</div><div class="line">            marked[i][j] = <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * <span class="doctag">@param</span> word: a string word</div><div class="line">     * <span class="doctag">@return</span>: the score of the word</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">scoreOf</span><span class="params">(String word)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!dic.contains(word))</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> len = word.length();</div><div class="line">        <span class="keyword">switch</span>(len) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">            <span class="keyword">case</span> <span class="number">2</span>: <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">3</span>: <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">4</span>: <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">5</span>: <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">6</span>: <span class="keyword">return</span> <span class="number">3</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">7</span>: <span class="keyword">return</span> <span class="number">5</span>;</div><div class="line">            <span class="keyword">default</span>: <span class="keyword">return</span> <span class="number">11</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        In in = <span class="keyword">new</span> In(args[<span class="number">0</span>]);</div><div class="line">        String[] dictionary = in.readAllStrings();</div><div class="line">        BoggleSolver solver = <span class="keyword">new</span> BoggleSolver(dictionary);</div><div class="line">        BoggleBoard board = <span class="keyword">new</span> BoggleBoard(args[<span class="number">1</span>]);</div><div class="line">        <span class="keyword">int</span> score = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (String word : solver.getAllValidWords(board)) &#123;</div><div class="line">            StdOut.println(word);</div><div class="line">            score += solver.scoreOf(word);</div><div class="line">        &#125;</div><div class="line">        StdOut.println(<span class="string">"Score = "</span> + score);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<h1 id="26-way-Trie"><a href="#26-way-Trie" class="headerlink" title="26-way Trie"></a>26-way Trie</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 26-way trie node</div><div class="line"> * </div><div class="line"> * This class is for storing dictionary.</div><div class="line"> * It bases on the provided TrieSET, which is 256-way and without </div><div class="line"> * isPrefix() function</div><div class="line"> * </div><div class="line"> * 26-way for memory optimization</div><div class="line"> * isPrefix() for timing optimization</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Daihu</div><div class="line"> * <span class="doctag">@date</span>   2017-2-22</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrieSET</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> R = <span class="number">26</span>;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Node root;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> findPrefix;</div><div class="line"></div><div class="line">    <span class="comment">// 26-way trie node</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> Node[] next = <span class="keyword">new</span> Node[R];</div><div class="line">        <span class="keyword">private</span> <span class="keyword">boolean</span> isString;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TrieSET</span><span class="params">()</span> </span>&#123;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(String key)</span> </span>&#123;</div><div class="line">        Node x = get(root, key, <span class="number">0</span>);</div><div class="line">        <span class="keyword">if</span> (x == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">return</span> x.isString;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">get</span><span class="params">(Node x, String key, <span class="keyword">int</span> d)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (x == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (d == key.length()) <span class="keyword">return</span> x;</div><div class="line">        <span class="keyword">char</span> c = key.charAt(d);</div><div class="line">        <span class="keyword">return</span> get(x.next[c-<span class="number">65</span>], key, d+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(String key)</span> </span>&#123;</div><div class="line">        root = add(root, key, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">add</span><span class="params">(Node x, String key, <span class="keyword">int</span> d)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (x == <span class="keyword">null</span>) x = <span class="keyword">new</span> Node();</div><div class="line">        <span class="keyword">if</span> (d == key.length()) &#123;</div><div class="line">            x.isString = <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">char</span> c = key.charAt(d);</div><div class="line">            x.next[c-<span class="number">65</span>] = add(x.next[c-<span class="number">65</span>], key, d+<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> x;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * This function is for optimization. If a string is not prefix of words</div><div class="line">     * in dictionary, we don't need to go on</div><div class="line">     * <span class="doctag">@param</span> prefix</div><div class="line">     * <span class="doctag">@return</span> if the string is the prefix of words in dictionary</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPrefix</span><span class="params">(String prefix)</span> </span>&#123;</div><div class="line">        findPrefix = <span class="keyword">false</span>;</div><div class="line">        Node x = get(root, prefix, <span class="number">0</span>);</div><div class="line">        collect(x, <span class="keyword">new</span> StringBuilder(prefix));</div><div class="line">        <span class="keyword">return</span> findPrefix;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">collect</span><span class="params">(Node x, StringBuilder prefix)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (findPrefix) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span> (x == <span class="keyword">null</span>) <span class="keyword">return</span>;</div><div class="line">        <span class="keyword">if</span> (x.isString) findPrefix = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="number">0</span>; c &lt; R; c++) &#123;</div><div class="line">            prefix.append(c);</div><div class="line">            collect(x.next[c], prefix);</div><div class="line">            prefix.deleteCharAt(prefix.length() - <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/20/Algorithm/Application/Java-MaxFlow-MinCut/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Dai Hu">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/20/Algorithm/Application/Java-MaxFlow-MinCut/" itemprop="url">
                   [Java]MaxFlow&MinCut(Baseball Elimination)
                 </a>
               
@@ -331,8 +497,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/20/Algorithm/Java-MaxFlow-MinCut/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/Algorithm/Java-MaxFlow-MinCut/" itemprop="commentCount"></span>
+                <a href="/2017/02/20/Algorithm/Application/Java-MaxFlow-MinCut/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/20/Algorithm/Application/Java-MaxFlow-MinCut/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -342,7 +508,7 @@
 
           
           
-             <span id="/2017/02/20/Algorithm/Java-MaxFlow-MinCut/" class="leancloud_visitors" data-flag-title="[Java]MaxFlow&MinCut(Baseball Elimination)">
+             <span id="/2017/02/20/Algorithm/Application/Java-MaxFlow-MinCut/" class="leancloud_visitors" data-flag-title="[Java]MaxFlow&MinCut(Baseball Elimination)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +576,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/Algorithm/Java-EdgeWeightedDAG/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/Algorithm/Application/Java-EdgeWeightedDAG/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -435,7 +601,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/02/Algorithm/Java-EdgeWeightedDAG/" itemprop="url">
+                <a class="post-title-link" href="/2017/02/02/Algorithm/Application/Java-EdgeWeightedDAG/" itemprop="url">
                   [Java]Edge-Weighted DAG(Resizing Image)
                 </a>
               
@@ -493,8 +659,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/02/Algorithm/Java-EdgeWeightedDAG/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/02/Algorithm/Java-EdgeWeightedDAG/" itemprop="commentCount"></span>
+                <a href="/2017/02/02/Algorithm/Application/Java-EdgeWeightedDAG/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/02/Algorithm/Application/Java-EdgeWeightedDAG/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -504,7 +670,7 @@
 
           
           
-             <span id="/2017/02/02/Algorithm/Java-EdgeWeightedDAG/" class="leancloud_visitors" data-flag-title="[Java]Edge-Weighted DAG(Resizing Image)">
+             <span id="/2017/02/02/Algorithm/Application/Java-EdgeWeightedDAG/" class="leancloud_visitors" data-flag-title="[Java]Edge-Weighted DAG(Resizing Image)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -578,7 +744,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/23/Algorithm/Java-DirectedGraph/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/23/Algorithm/Application/Java-DirectedGraph/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -603,7 +769,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/01/23/Algorithm/Java-DirectedGraph/" itemprop="url">
+                <a class="post-title-link" href="/2017/01/23/Algorithm/Application/Java-DirectedGraph/" itemprop="url">
                   [Java]Drected Graph(Semantic Lexicon)
                 </a>
               
@@ -661,8 +827,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/01/23/Algorithm/Java-DirectedGraph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/23/Algorithm/Java-DirectedGraph/" itemprop="commentCount"></span>
+                <a href="/2017/01/23/Algorithm/Application/Java-DirectedGraph/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/23/Algorithm/Application/Java-DirectedGraph/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -672,7 +838,7 @@
 
           
           
-             <span id="/2017/01/23/Algorithm/Java-DirectedGraph/" class="leancloud_visitors" data-flag-title="[Java]Drected Graph(Semantic Lexicon)">
+             <span id="/2017/01/23/Algorithm/Application/Java-DirectedGraph/" class="leancloud_visitors" data-flag-title="[Java]Drected Graph(Semantic Lexicon)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -888,7 +1054,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Algorithm/Java-WeightedQuickUnion/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Algorithm/Implementation/Java-WeightedQuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -913,7 +1079,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/23/Algorithm/Java-WeightedQuickUnion/" itemprop="url">
+                <a class="post-title-link" href="/2016/12/23/Algorithm/Implementation/Java-WeightedQuickUnion/" itemprop="url">
                   [Java]WeightedQuickUnion
                 </a>
               
@@ -971,8 +1137,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/23/Algorithm/Java-WeightedQuickUnion/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/Algorithm/Java-WeightedQuickUnion/" itemprop="commentCount"></span>
+                <a href="/2016/12/23/Algorithm/Implementation/Java-WeightedQuickUnion/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/Algorithm/Implementation/Java-WeightedQuickUnion/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -982,7 +1148,7 @@
 
           
           
-             <span id="/2016/12/23/Algorithm/Java-WeightedQuickUnion/" class="leancloud_visitors" data-flag-title="[Java]WeightedQuickUnion">
+             <span id="/2016/12/23/Algorithm/Implementation/Java-WeightedQuickUnion/" class="leancloud_visitors" data-flag-title="[Java]WeightedQuickUnion">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1049,7 +1215,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Algorithm/Java-CompressedQuickUnion/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -1074,7 +1240,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/23/Algorithm/Java-CompressedQuickUnion/" itemprop="url">
+                <a class="post-title-link" href="/2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/" itemprop="url">
                   [Java]CompressedQuickUnion
                 </a>
               
@@ -1132,8 +1298,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/23/Algorithm/Java-CompressedQuickUnion/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/Algorithm/Java-CompressedQuickUnion/" itemprop="commentCount"></span>
+                <a href="/2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1143,7 +1309,7 @@
 
           
           
-             <span id="/2016/12/23/Algorithm/Java-CompressedQuickUnion/" class="leancloud_visitors" data-flag-title="[Java]CompressedQuickUnion">
+             <span id="/2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/" class="leancloud_visitors" data-flag-title="[Java]CompressedQuickUnion">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1210,7 +1376,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Algorithm/Java-QuickUnion/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -1235,7 +1401,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/22/Algorithm/Java-QuickUnion/" itemprop="url">
+                <a class="post-title-link" href="/2016/12/22/Algorithm/Implementation/Java-QuickUnion/" itemprop="url">
                   [Java]QuickUnion
                 </a>
               
@@ -1293,8 +1459,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/22/Algorithm/Java-QuickUnion/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Algorithm/Java-QuickUnion/" itemprop="commentCount"></span>
+                <a href="/2016/12/22/Algorithm/Implementation/Java-QuickUnion/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Algorithm/Implementation/Java-QuickUnion/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1304,7 +1470,7 @@
 
           
           
-             <span id="/2016/12/22/Algorithm/Java-QuickUnion/" class="leancloud_visitors" data-flag-title="[Java]QuickUnion">
+             <span id="/2016/12/22/Algorithm/Implementation/Java-QuickUnion/" class="leancloud_visitors" data-flag-title="[Java]QuickUnion">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1371,7 +1537,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Algorithm/Java-QuickFind/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickFind/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -1396,7 +1562,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/12/22/Algorithm/Java-QuickFind/" itemprop="url">
+                <a class="post-title-link" href="/2016/12/22/Algorithm/Implementation/Java-QuickFind/" itemprop="url">
                   [Java]QuickFind
                 </a>
               
@@ -1454,8 +1620,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/22/Algorithm/Java-QuickFind/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Algorithm/Java-QuickFind/" itemprop="commentCount"></span>
+                <a href="/2016/12/22/Algorithm/Implementation/Java-QuickFind/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Algorithm/Implementation/Java-QuickFind/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1465,7 +1631,7 @@
 
           
           
-             <span id="/2016/12/22/Algorithm/Java-QuickFind/" class="leancloud_visitors" data-flag-title="[Java]QuickFind">
+             <span id="/2016/12/22/Algorithm/Implementation/Java-QuickFind/" class="leancloud_visitors" data-flag-title="[Java]QuickFind">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1566,7 +1732,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

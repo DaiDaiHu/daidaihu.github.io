@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="CompressedQuickUnion12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @author https://daidaihu.github.io/ * @date   2016年12月23日 *  * Flatter the tree: * Each tim">
+<meta name="description" content="QuickUnion1234567891011121314151617181920212223242526272829303132333435363738394041424344/** * @author https://daidaihu.github.io/ * @date   2016年12月22日 *  * The idea of quick union is:  * if id[p] =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Java]CompressedQuickUnion">
-<meta property="og:url" content="http://yoursite.com/2016/12/23/Algorithm/Java-CompressedQuickUnion/index.html">
+<meta property="og:title" content="[Java]QuickUnion">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickUnion/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="CompressedQuickUnion12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @author https://daidaihu.github.io/ * @date   2016年12月23日 *  * Flatter the tree: * Each tim">
-<meta property="og:updated_time" content="2017-02-02T22:54:37.000Z">
+<meta property="og:description" content="QuickUnion1234567891011121314151617181920212223242526272829303132333435363738394041424344/** * @author https://daidaihu.github.io/ * @date   2016年12月22日 *  * The idea of quick union is:  * if id[p] =">
+<meta property="og:updated_time" content="2017-02-02T22:54:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Java]CompressedQuickUnion">
-<meta name="twitter:description" content="CompressedQuickUnion12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @author https://daidaihu.github.io/ * @date   2016年12月23日 *  * Flatter the tree: * Each tim">
+<meta name="twitter:title" content="[Java]QuickUnion">
+<meta name="twitter:description" content="QuickUnion1234567891011121314151617181920212223242526272829303132333435363738394041424344/** * @author https://daidaihu.github.io/ * @date   2016年12月22日 *  * The idea of quick union is:  * if id[p] =">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/23/Algorithm/Java-CompressedQuickUnion/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickUnion/"/>
 
 
 
 
 
-  <title> [Java]CompressedQuickUnion | Hexo </title>
+  <title> [Java]QuickUnion | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/23/Algorithm/Java-CompressedQuickUnion/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickUnion/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Dai Hu">
@@ -274,7 +274,7 @@
             
             
               
-                [Java]CompressedQuickUnion
+                [Java]QuickUnion
               
             
           </h1>
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-23T23:14:47-06:00">
-                2016-12-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T23:13:34-06:00">
+                2016-12-22
               </time>
             
 
@@ -330,8 +330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/12/23/Algorithm/Java-CompressedQuickUnion/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/23/Algorithm/Java-CompressedQuickUnion/" itemprop="commentCount"></span>
+                <a href="/2016/12/22/Algorithm/Implementation/Java-QuickUnion/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Algorithm/Implementation/Java-QuickUnion/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -341,7 +341,7 @@
 
           
           
-             <span id="/2016/12/23/Algorithm/Java-CompressedQuickUnion/" class="leancloud_visitors" data-flag-title="[Java]CompressedQuickUnion">
+             <span id="/2016/12/22/Algorithm/Implementation/Java-QuickUnion/" class="leancloud_visitors" data-flag-title="[Java]QuickUnion">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -368,7 +368,7 @@
       
 
       
-        <h1 id="CompressedQuickUnion"><a href="#CompressedQuickUnion" class="headerlink" title="CompressedQuickUnion"></a>CompressedQuickUnion</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月23日</div><div class="line"> * </div><div class="line"> * Flatter the tree:</div><div class="line"> * Each time call the root method, makes i to connect to its root</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CompressedQU</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id, size;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CompressedQU</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        size = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            id[i] = i;</div><div class="line">            size[i] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (id[i] != i) &#123;</div><div class="line">            id[i] = id[id[i]];  <span class="comment">//connect i to upper node to flat</span></div><div class="line">            i = id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> pid = root(p);</div><div class="line">        <span class="keyword">int</span> qid = root(q);</div><div class="line">        id[pid] = qid;</div><div class="line"><span class="comment">//        System.out.println(id[3]);</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        CompressedQU cqu = <span class="keyword">new</span> CompressedQU(<span class="number">10</span>);</div><div class="line">        cqu.union(<span class="number">1</span>, <span class="number">0</span>);</div><div class="line">        cqu.union(<span class="number">3</span>, <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h1 id="QuickUnion"><a href="#QuickUnion" class="headerlink" title="QuickUnion"></a>QuickUnion</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * <span class="doctag">@author</span> https://daidaihu.github.io/</div><div class="line"> * <span class="doctag">@date</span>   2016年12月22日</div><div class="line"> * </div><div class="line"> * The idea of quick union is: </div><div class="line"> * if id[p] = q; id[q] = j; id[j] = j</div><div class="line"> * p q j are in an union, and j is their root</div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickUnion</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span>[] id;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">QuickUnion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        id = <span class="keyword">new</span> <span class="keyword">int</span>[n];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">            id[i] = i;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">root</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">while</span> (id[i] != i) &#123;</div><div class="line">            i = id[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> i;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> root(p) == root(q);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> proot = root(p);</div><div class="line">        id[proot] = q;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        QuickUnion qu = <span class="keyword">new</span> QuickUnion(<span class="number">10</span>);</div><div class="line">        System.out.println(qu.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">        qu.union(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line">        System.out.println(qu.connected(<span class="number">1</span>, <span class="number">2</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
       
     </div>
 
@@ -394,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/22/Algorithm/Java-QuickUnion/" rel="next" title="[Java]QuickUnion">
-                <i class="fa fa-chevron-left"></i> [Java]QuickUnion
+              <a href="/2016/12/22/Algorithm/Implementation/Java-QuickFind/" rel="next" title="[Java]QuickFind">
+                <i class="fa fa-chevron-left"></i> [Java]QuickFind
               </a>
             
           </div>
@@ -404,8 +404,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/23/Algorithm/Java-WeightedQuickUnion/" rel="prev" title="[Java]WeightedQuickUnion">
-                [Java]WeightedQuickUnion <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/23/Algorithm/Implementation/Java-CompressedQuickUnion/" rel="prev" title="[Java]CompressedQuickUnion">
+                [Java]CompressedQuickUnion <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -432,8 +432,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/23/Algorithm/Java-CompressedQuickUnion/"
-           data-title="[Java]CompressedQuickUnion" data-url="http://yoursite.com/2016/12/23/Algorithm/Java-CompressedQuickUnion/">
+      <div class="ds-thread" data-thread-key="2016/12/22/Algorithm/Implementation/Java-QuickUnion/"
+           data-title="[Java]QuickUnion" data-url="http://yoursite.com/2016/12/22/Algorithm/Implementation/Java-QuickUnion/">
       </div>
     
   </div>
@@ -480,7 +480,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -533,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CompressedQuickUnion"><span class="nav-number">1.</span> <span class="nav-text">CompressedQuickUnion</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QuickUnion"><span class="nav-number">1.</span> <span class="nav-text">QuickUnion</span></a></li></ol></div>
             
 
           </div>
